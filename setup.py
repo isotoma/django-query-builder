@@ -42,7 +42,7 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        'django>=1.7',
+        'django==1.8.12',
         'pytz>=2015.6',
         'fleming>=0.4.3',
         'six',

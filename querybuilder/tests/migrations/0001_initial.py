@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 # These migrations should only be run during tests and not in your installed app.
 try:
+    raise ImportError()
     import django.contrib.postgres.fields.jsonb
     json_field = django.contrib.postgres.fields.jsonb.JSONField()
 except ImportError:
