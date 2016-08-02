@@ -1294,7 +1294,7 @@ class Query(object):
             return ''
 
         withs = []
-        for inner_query in self.with_tables + self.get_inner_queries():
+        for inner_query in self.get_inner_queries():
             withs.append(inner_query.get_with_sql())
         if len(withs):
             withs.reverse()
@@ -1305,7 +1305,7 @@ class Query(object):
         inner_queries = []
         if query is None:
             query = self
-        for table in query.tables:
+        for table in query.tables + query.with_tables:
             if type(table) is QueryTable:
                 inner_queries.append(table)
                 inner_queries += self.get_inner_queries(table.query)
